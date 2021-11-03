@@ -1,5 +1,6 @@
 //User editable configuration
 const appPort = 3000;  //The port you wish to run this app on
+const appHost = "localhost"; //Host you are running your app on
 const mongoHost = "localhost"; //MongoDB hostname
 const mongoPort = "27017"; //MongoDB port
 const dbName = "todolistDB"; //Name of database to store todo lists
@@ -198,6 +199,6 @@ app.get("/about", (req, res)=> {
   res.render("about");
 });
 
-app.listen(appPort, function() {
-  console.log("Server started on port " + appPort);
+app.listen(appPort, appHost, function() {
+  console.log("Server started at " + appHost + " on port " + appPort);
 });
